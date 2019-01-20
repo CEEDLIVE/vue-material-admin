@@ -4,22 +4,22 @@
       <v-layout row wrap>
         <v-flex sm12>
           <h3>Complex Table</h3>
-        </v-flex>        
+        </v-flex>
         <v-flex lg12>
           <v-card>
             <v-toolbar card color="white">
               <v-text-field
-              flat
-              solo
-              prepend-icon="search"
-              placeholder="Type something"
-              v-model="search"
-              hide-details
-              class="hidden-sm-and-down"
-              ></v-text-field>     
+                flat
+                solo
+                prepend-icon="search"
+                placeholder="Type something"
+                v-model="search"
+                hide-details
+                class="hidden-sm-and-down"
+              ></v-text-field>
               <v-btn icon>
                 <v-icon>filter_list</v-icon>
-              </v-btn>         
+              </v-btn>
             </v-toolbar>
             <v-divider></v-divider>
             <v-card-text class="pa-0">
@@ -32,19 +32,15 @@
                 item-key="name"
                 select-all
                 v-model="complex.selected"
-                >
+              >
                 <template slot="items" slot-scope="props">
-                <td>
-                  <v-checkbox
-                    primary
-                    hide-details
-                    v-model="props.selected"
-                  ></v-checkbox>
-                </td>              
+                  <td>
+                    <v-checkbox primary hide-details v-model="props.selected"></v-checkbox>
+                  </td>
                   <td>
                     <v-avatar size="32">
-                      <img :src="props.item.avatar" alt="">
-                    </v-avatar> 
+                      <img :src="props.item.avatar" alt>
+                    </v-avatar>
                   </td>
                   <td>{{ props.item.name }}</td>
                   <td>{{ props.item.email }}</td>
@@ -61,10 +57,10 @@
               </v-data-table>
             </v-card-text>
           </v-card>
-        </v-flex>  
+        </v-flex>
         <v-flex sm12>
           <h3>Basic Table</h3>
-        </v-flex>              
+        </v-flex>
         <v-flex lg12>
           <v-data-table
             :headers="basic.headers"
@@ -82,7 +78,6 @@
             </template>
           </v-data-table>
         </v-flex>
-
       </v-layout>
     </v-container>
   </div>
@@ -91,7 +86,7 @@
 <script>
 import { Items as Users } from '@/api/user';
 export default {
-  data () {
+  data() {
     return {
       search: '',
       complex: {

@@ -19,7 +19,10 @@
                           <v-text-field label="Legal first name" required></v-text-field>
                         </v-flex>
                         <v-flex xs12 sm6 md4>
-                          <v-text-field label="Legal middle name" hint="example of helper text only on focus"></v-text-field>
+                          <v-text-field
+                            label="Legal middle name"
+                            hint="example of helper text only on focus"
+                          ></v-text-field>
                         </v-flex>
                         <v-flex xs12 sm6 md4>
                           <v-text-field
@@ -36,11 +39,7 @@
                           <v-text-field label="Password" type="password" required></v-text-field>
                         </v-flex>
                         <v-flex xs12 sm6>
-                          <v-select
-                            label="Age"
-                            required
-                            :items="['0-17', '18-29', '30-54', '54+']"
-                          ></v-select>
+                          <v-select label="Age" required :items="['0-17', '18-29', '30-54', '54+']"></v-select>
                         </v-flex>
                         <v-flex xs12 sm6>
                           <v-select
@@ -68,7 +67,12 @@
         <v-flex xl4>
           <v-widget title="Fullscreen Dialog">
             <div slot="widget-content">
-              <v-dialog v-model="fullscreen.dialog" fullscreen transition="dialog-bottom-transition" :overlay="false">
+              <v-dialog
+                v-model="fullscreen.dialog"
+                fullscreen
+                transition="dialog-bottom-transition"
+                :overlay="false"
+              >
                 <v-btn color="primary" dark slot="activator">Open Dialog</v-btn>
                 <v-card>
                   <v-toolbar dark color="primary">
@@ -164,7 +168,11 @@
                   </v-card-text>
                   <v-divider></v-divider>
                   <v-card-actions>
-                    <v-btn color="blue darken-1" flat @click.native="scrollable.dialog = false">Close</v-btn>
+                    <v-btn
+                      color="blue darken-1"
+                      flat
+                      @click.native="scrollable.dialog = false"
+                    >Close</v-btn>
                     <v-btn color="blue darken-1" flat @click.native="scrollable.dialog = false">Save</v-btn>
                   </v-card-actions>
                 </v-card>
@@ -183,7 +191,7 @@ export default {
   components: {
     VWidget
   },
-  data () {
+  data() {
     return {
       basic: {
         dialog: false
@@ -192,16 +200,16 @@ export default {
         dialog: false,
         notifications: false,
         sound: true,
-        widgets: false        
+        widgets: false
       },
       scrollable: {
         name: '',
-        dialog: false        
+        dialog: false
       }
     };
   },
   computed: {
-  },  
+  },
   methods: {
   }
 };
